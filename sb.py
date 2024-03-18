@@ -54,3 +54,7 @@ while True:
             break
     break            
 '''
+li = [1]
+
+li[0] += 5
+print(li)
