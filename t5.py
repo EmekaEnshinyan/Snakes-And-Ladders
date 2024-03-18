@@ -6,7 +6,7 @@ def roll_the_dice():
 
 # Initialise the players
 #Red -> Blue -> Green -> White
-p_list = [["Red", 0],["Blue", 100],["Green", 0],["White", 0]]
+player_list = [["Red", 0],["Blue", 100],["Green", 0],["White", 0]]
 p_position = [0]
 
 number_players = 0
@@ -35,13 +35,13 @@ print(post_alter)
 # testing
 position = 1
 while True:
-    for pos in p_list:
-        if 100 in pos:
+    for pos in player_list:
+        if 100 in pos: 
             print("true")
     break
 
 # Commence the game
-for pos in p_list:        
+for pos in player_list:        
     while 100 not in pos:
         # Print the position for Player 1 and Player 2
         print(f"Player {pos[0]} is in position {p1_position}\nPlayer {p2_name} is in position {p2_position}")
@@ -64,10 +64,8 @@ for pos in p_list:
         # If less - it moves to the new position.
         # If greater - it passes (else statement).
         # If it is equal to 100, that player wins and the loop breaks so the next player cannot roll the dice.
-        if p1_position == 100:
-            print(f"Player {p1_name} has reached 100 and is the winner!")
-        elif p2_position == 100:
-            print(f"Player {p2_name} has reached 100 and is the winner!") 
+        if pos[1] == 100:
+            print(f"Player {pos[0]} has reached 100 and is the winner!")
         # Check if player 1 is either on a snake head or ladder Base
 
         # Check if player 2 is either on a snake head or ladder Base
@@ -77,16 +75,16 @@ for pos in p_list:
         if p1_position in pre_alter:
             altered_p1_position = post_alter[pre_alter.index(p1_position)]
             if p1_position > altered_p1_position:
-                print(f"Player {p1_name} stepped on a snake and is now in position {altered_p1_position}")
+                print(f"Player {pos[0]} stepped on a snake and is now in position {altered_p1_position}")
             else:
-                print(f"Player {p1_name} climbed a ladder and is now in position {altered_p1_position}")
+                print(f"Player {pos[0]} climbed a ladder and is now in position {altered_p1_position}")
             p1_position = altered_p1_position
 
         if p2_position in pre_alter:
             altered_p2_position = post_alter[pre_alter.index(p2_position)]
             if p2_position > altered_p2_position:
-                print(f"Player {p2_name} stepped on a snake and is now in position {altered_p2_position}")
+                print(f"Player {pos[0]} stepped on a snake and is now in position {altered_p2_position}")
             else:
-                print(f"Player {p2_name} climbed a ladder and is now in position {altered_p2_position}")
+                print(f"Player {pos[0]} climbed a ladder and is now in position {altered_p2_position}")
             p2_position = altered_p2_position
                 

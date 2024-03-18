@@ -2,7 +2,7 @@ from random import randint
 def roll_the_dice():
     return randint(1,12)
 
-
+'''
 # Initialise the players
 #Red -> Blue -> Green -> White
 p_list = [["Red", 3],["Blue", 5],["Green", 7],["White", 100]]
@@ -53,22 +53,4 @@ while True:
             print(f"{pos[pos.index(100)]} wins")            
             break
     break            
-            
-            
 '''
-    
-    
-    if p1_position > 100:
-        p1_position -= p1_diceroll
-        p2_diceroll = roll_the_dice()
-    if p2_position > 100:
-        p2_position -= p2_diceroll
-        p2_diceroll = roll_the_dice()
-    print("player 1 rolls:", p1_diceroll, p1_position)
-    print("player 2 rolls:", p2_diceroll, p2_position)
-
-'''
-            
-            
-            
-
