@@ -1,11 +1,13 @@
 # Copy and paste everything from Task2
 # DO NOT delete this line
 #from diceroll import roll_the_dice
-from math import choice, choices, random
+from random import choice, choices, randint
+
 
 def roll_the_dice():
-    random.randint(1,12)
+    return randint(1,12)
 diceroll = roll_the_dice()
+
 # Copy and paste the work from Task 1 here 
 
 
