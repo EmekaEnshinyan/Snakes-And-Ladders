@@ -1,7 +1,10 @@
 # Imports
-from random import choice, choices, randint
+from random import choice, choices, seed
 
-roll = randint(1,12)
+
+# Set seed
+seed(42)
+
 
 # Parameters
 num_snakes = 5
@@ -83,33 +86,3 @@ for ladder_base in ladder_bases:
 print(f"Player 1 position is: {p1_position}")
 # Print the position for Player 2
 print(f"Player 2 position is: {p2_position}")
-
-# Roll the dice for the first player
-diceroll = roll
-
-# Write the logic to move the first player
-p1_position += diceroll
-
-# Roll the dice for the second player
-diceroll = roll
-
-# Write the logic to move the second player
-p2_position += diceroll
-
-# Print the position for Player 1
-print(f"Player 1 position is: {p1_position}")
-# Print the position for Player 2
-print(f"Player 2 position is: {p2_position}")
-
-
-# Check if player 1 is either on a snake head or ladder Base
-if p1_position in snake_heads:
-    pl_position = snake_tails[snake_heads.index(p1_position)]
-else:
-    print(p1_position)
-
-# Un-comment the next four lines to print interim output:
-#print("ladder bases:", ladder_bases)
-#print("ladder tops:", ladder_tops)
-#print("snake_heads:", snake_heads)
-#print("snake_tails:", snake_tails)

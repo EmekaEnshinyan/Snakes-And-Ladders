@@ -1,12 +1,7 @@
 # Copy and paste everything from Task2
 # DO NOT delete this line
-#from diceroll import roll_the_dice
-from random import choice, choices, randint
-
-
-def roll_the_dice():
-    return randint(1,12)
-diceroll = roll_the_dice()
+from diceroll import roll_the_dice
+from random import choice, choices
 
 # Copy and paste the work from Task 1 here 
 
@@ -120,10 +115,10 @@ post_alter = snake_tails + ladder_tops
 # Update the positions if required
 
 if p1_position in pre_alter:
-    p1_position = post_alter[pre_alter.index()]
+    p1_position = post_alter[pre_alter.index(p1_position)]
 
 if p2_position in pre_alter:
-    p2_position = post_alter[pre_alter.index()]
+    p2_position = post_alter[pre_alter.index(p2_position)]
 
 # Print the position for Player 1
 print(f"Player 1 position is: {p1_position}")
