@@ -43,7 +43,7 @@ p2_position = 0
 # snake_heads = sample(range(min_snake_head, max_snake_head), k=num_snakes)
 my_range = range(min_snake_head, max_snake_head)
 my_k = num_snakes
-snake_heads = choices(my_range, k=my_k)
+snake_heads = sample(my_range, k=my_k)
 
 # Snake Tail Positions
 # ~~~~~~~~~~~~~~~~~~~~
