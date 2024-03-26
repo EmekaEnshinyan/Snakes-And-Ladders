@@ -1,12 +1,8 @@
-'''
-1. remove the list tracking for rolls
-'''
-
 # DO NOT delete this line
 from random import randint
 
 def roll_the_dice():
-    return randint(1,7)
+    return randint(1,6)
 
 # Initialise the players
 p1_name = "Red"
@@ -28,43 +24,45 @@ print(post_alter)
 
 
 # Commence the game
-p1_rolls = []
-p2_rolls = []
-while p1_position != 100 or p2_position != 100:
-    print(f"Player {p1_name} is in position {p1_position}\nPlayer {p1_name} is in position {p2_position}")
+roll = 0
+proxy1_pos = 0
+p1_pos = 0
+while True:
+    print(f"Player {p1_name} is in position {p1_position}")
+    print(f"Player {p2_name} is in position {p2_position}")
     p1_diceroll = roll_the_dice()
     p2_diceroll = roll_the_dice()   
-         
-    new_roll += p1_diceroll
-    if p1_position + new_roll >= 100:
-        winner = f"Player {p1_name} has reached 100 and is the winner!"
-        print(winner)
+    
+    '''
+    - get dice roll
+        - add diceroll to a var that will accumulate the rolls
+            - set p1 position to var, unless it exceeds 100
+                - if exceeds 100, then ignore roll and declare p1 winner
+    '''
+    # player 1 rolls  
+    # TODO: make sure align with assignment cond        
+    if p1_position + p1_diceroll > 100:
+        pass
+    elif p1_position + p1_diceroll == 100:
+        p1_position += p1_diceroll
+        winner = p1_name
+        print(f"{winner} wins")
+        # break terminates the loop
         break
-    
-    print("new roll", new_roll)
-    p1_rolls.append(new_roll)
-    if p1_rolls[len(p1_rolls)-1] > 100:
-        p1_rolls.pop()
     else:
-        p1_position += new_roll
-    new_roll = 0
-    if p2_position + new_roll >= 100:
-        winner = f"Player {p2_name} has reached 100 and is the winner!"
-        print(winner)
+        p1_position += p1_diceroll
+        
+    if p2_position + p2_diceroll > 100:
+        pass
+    elif p2_position + p2_diceroll == 100:
+        p2_position += p2_diceroll
+        winner = p2_name
+        print(f"{winner} wins")
         break
-    
-    print("post roll", p1_rolls)     
-    new_roll += p2_diceroll
-    p2_rolls.append(new_roll)
-    if p2_rolls[len(p2_rolls)-1] > 100:
-        p2_rolls.pop()
     else:
-        p2_position += new_roll
-    new_roll = 0
-       
+        p2_position += p2_diceroll
     
-    
-
+    # snakes & ladders
     if p1_position in pre_alter:
         altered_p1_position = post_alter[pre_alter.index(p1_position)]
         if p1_position > altered_p1_position:
