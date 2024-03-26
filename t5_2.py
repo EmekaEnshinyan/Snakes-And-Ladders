@@ -1,3 +1,5 @@
+# TODO: careful with conflation of vars
+
 # supplement for import
 from random import randint
 def roll_the_dice():
@@ -14,9 +16,10 @@ while True:
             players.pop()
             positions.pop()
         break
-print("players & Positions", players, positions)
+print(players)
+print(positions)
 #OBJECTS: ["player1", "player2", ...]; [0, 0, ...]
-    
+
 ''''''
 # Initialise the snakes and ladders
 snake_heads = [25, 44, 65, 76, 99]
@@ -29,24 +32,40 @@ print(pre_alter)
 print(post_alter)
 # OBJECTS: [25, 44, 65, 76, 99,8, 26, 38, 47, 66]; [6, 23, 34, 28, 56, 43, 39, 55, 81, 92]
 
-
 # Commence the game
-p_rolls = [0]
-check_positions = positions
-new_roll = 0
-while p_rolls[len(p_rolls)-1] < 100:   
-    dice_roll = roll_the_dice()
-    # roll dice 
 
+while winner == "":
+    winner = ""
+    # roll dice and store in var
     place = 0
-    
+    dice_roll = roll_the_dice()
     for position in positions:
-        print(f"Player {players[place]} is in position {positions[place]}")   
-        print(f"Player {players[place]} rolls the dice")   
-    
-        check_positions[place] += p_rolls[place]
-        print(f"{players[place]} position", p_rolls[(len(p_rolls)-1)])
-        '''
+        p = 0
+        print(p)
+        print(f"Player {players[place]} rolls the dice")
+        if p < 100:
+            p += dice_roll
+            position = p
+            print(p)
+            place += 1
+        elif p + dice_roll == 100:
+            winner = players[place]
+            print(f"The winner is {winner}!")
+            break
+        elif p + dice_roll > 100:
+            pass
+                
+'''
+    for position in positions:
+        if position <= 100:
+            position += dice_roll
+        elif position + dice_roll == 100:
+            print(f"Player {players[place]} is in position {positions[place]}")
+            break
+        else:
+            pass
+'''
+'''
      if p1_position + p1_diceroll > 100:
         pass
     elif p1_position + p1_diceroll == 100:
@@ -57,38 +76,27 @@ while p_rolls[len(p_rolls)-1] < 100:
         break
     else:
         p1_position += p1_diceroll
-    '''
-    
-    '''
+'''
+
+'''
         - get # of players where # = n
             - for each n, n rolls dice
-                - 
-    '''
-        if check_positions[place] > 100:
-            pass
-        elif check_positions[place] +  :
-            positions[place] += p_rolls[(len(p_rolls)-1)]
-            print("roll 3", p_rolls)
-            print("positions",positions)
-            print(f"{players[place]} at {positions[place]}")
-            place += 1
-    print(p_rolls)
-    print(positions)
-    
-        
-'''  
+                -
+'''
+
+'''
     print("dice rolled", new_roll)
-    
+
     for num in range(len(players)):
-        print(f"Player {players[num]} is in position {positions[num]}")   
-        print("p_rolls", p_rolls) 
+        print(f"Player {players[num]} is in position {positions[num]}")
+        print("p_rolls", p_rolls)
             break
-    
+
 
 
     if p_rolls[len(p_rolls)-1] > 100:
             p_rolls.pop()
-            new_roll = 0       
+            new_roll = 0
         else:
             print("new roll not over 100", new_roll)
             positions[num] = new_roll
