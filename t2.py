@@ -1,6 +1,6 @@
 # DO NOT delete this line
 from diceroll import roll_the_dice
-from random import choice, choices
+from random import choice, sample
 
 # Copy and paste the work from Task 1 here 
 
@@ -38,7 +38,7 @@ p2_position = 0
 # Snake Head Positions
 # ~~~~~~~~~~~~~~~~~~~~
 # We are choosing integers randomly from a range.
-snake_heads = choices(range(min_snake_head, max_snake_head), k=num_snakes)
+snake_heads = sample(range(min_snake_head, max_snake_head), k=num_snakes)
 
 # Snake Tail Positions
 # ~~~~~~~~~~~~~~~~~~~~
