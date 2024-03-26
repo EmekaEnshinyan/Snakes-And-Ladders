@@ -39,7 +39,7 @@ p2_position = 0
 
 # Snake Head Positions
 # ~~~~~~~~~~~~~~~~~~~~
-# We are choosing integers randomly from a range.
+# We are sampling integers randomly from a range.
 # snake_heads = sample(range(min_snake_head, max_snake_head), k=num_snakes)
 my_range = range(min_snake_head, max_snake_head)
 my_k = num_snakes
