@@ -40,7 +40,10 @@ p2_position = 0
 # Snake Head Positions
 # ~~~~~~~~~~~~~~~~~~~~
 # We are choosing integers randomly from a range.
-snake_heads = choices(range(min_snake_head, max_snake_head), k=num_snakes)
+
+my_range = range(min_snake_head, max_snake_head)
+my_k = num_snakes
+snake_heads = choices(my_range, k=my_k)
 
 # Snake Tail Positions
 # ~~~~~~~~~~~~~~~~~~~~
