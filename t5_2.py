@@ -13,7 +13,6 @@ while True:
         for i in range(4-n):
             players.pop()
             positions.pop()
-            
         break
 print("players & Positions", players, positions)
 #OBJECTS: ["player1", "player2", ...]; [0, 0, ...]
@@ -36,18 +35,38 @@ p_rolls = [0]
 check_positions = positions
 new_roll = 0
 while p_rolls[len(p_rolls)-1] < 100:   
+    dice_roll = roll_the_dice()
+    # roll dice 
+
     place = 0
+    
     for position in positions:
         print(f"Player {players[place]} is in position {positions[place]}")   
         print(f"Player {players[place]} rolls the dice")   
-        p_rolls.append(roll_the_dice())
-        #positions[place] += p_rolls[place]
+    
         check_positions[place] += p_rolls[place]
         print(f"{players[place]} position", p_rolls[(len(p_rolls)-1)])
+        '''
+     if p1_position + p1_diceroll > 100:
+        pass
+    elif p1_position + p1_diceroll == 100:
+        p1_position += p1_diceroll
+        winner = p1_name
+        print(f"{winner} wins")
+        # break terminates the loop
+        break
+    else:
+        p1_position += p1_diceroll
+    '''
+    
+    '''
+        - get # of players where # = n
+            - for each n, n rolls dice
+                - 
+    '''
         if check_positions[place] > 100:
-            print(f"{players[place]} wins")
-            break
-        else:
+            pass
+        elif check_positions[place] +  :
             positions[place] += p_rolls[(len(p_rolls)-1)]
             print("roll 3", p_rolls)
             print("positions",positions)

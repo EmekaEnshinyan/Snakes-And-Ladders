@@ -36,8 +36,21 @@ p2_position = 0
 
 # Snake Head Positions
 # ~~~~~~~~~~~~~~~~~~~~
-# We are choosing integers randomly from a range.
+'''
+sections of below line
+aim - one line of code was to avoid repetitions
+choices - returns a list of integers where the number of el is based on the value of k
+choices(range where n1 inclusive is less than n2 exclusive, k=<>)
+range - (n1, n2 where n2 > n1)
+
+my_range = range(min_snake_head, max_snake_head)
+my_k = num_snakes
+snake_heads = choices(my_range, k=my_k)
+
+
+'''
 snake_heads = choices(range(min_snake_head, max_snake_head), k=num_snakes)
+
 
 # Snake Tail Positions
 # ~~~~~~~~~~~~~~~~~~~~
@@ -50,6 +63,22 @@ snake_heads = choices(range(min_snake_head, max_snake_head), k=num_snakes)
 # 5. Update the list of "non-available squars" so each snake will have its own
 #    unique square for a tail.
 
+'''
+work from inside out
+1. convert range to list
+    ex: list(range(5)) = list(range(0,5))
+    returns [0,1,2,3,4]
+
+'''
+
+'''
+choice() - returns val 
+choices() - returns list
+NOTE: choice() and choices() can take a range of ints or a list
+TODO: abc 
+    but beware that both methods, if taking in a list, can return repeated el in new list
+we are using set() because the choices the el of ist_1 does not gurantee that el list_2 will be unique from choices()
+'''
 snake_tails = []
 for snake_head in snake_heads:
     snake_tails.append(choice(list(set(list(range(min_snake_tail, snake_head))) - set(snake_heads + snake_tails))))
