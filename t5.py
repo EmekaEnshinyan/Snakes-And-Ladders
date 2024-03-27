@@ -1,15 +1,27 @@
 # DO NOT delete this line
 from diceroll import roll_the_dice
 
-available_names = ["Red", "Blue", "Green", "White"]
-while True:
-    num_players = int(input("How many players are playing (1, 2, 3 or 4)?: "))
-    if not (num_players < 1 or num_players > 4):
-        break
+min_players = 1
+max_players = 4
 
-# Initialise the players
-players = available_names[:num_players]
-positions = [0, 0, 0, 0][:num_players]
+players = ["Red", "Blue", "Green", "White"]
+positions = [0 ,0, 0, 0]
+
+while True:
+    num_players = input("How many players are playing (1, 2, 3 or 4)?: ")
+    # Checking the input is a digit, not letters:
+    if not num_players.isdigit():
+        print("please type the number of players from 1 to 4")
+    else:
+        num_players = int(num_players)
+        # Verifiying valid number of players:
+        if (num_players < min_players or num_players > max_players):
+            print("please type the number of players from 1 to 4")
+        else:
+            # Upadting players and positions:
+            players = players[:num_players]
+            positions = positions[:num_players]
+            break
 
 # Initialise the snakes and ladders
 snake_heads = [25, 44, 65, 76, 99]
@@ -44,7 +56,7 @@ while True:
             print(f"Player {winner} has reached 100 and is the winner!")
             break
     else:
-        pass
+        continue
     
     # Check if the player is either on a snake head or ladder Base
 
@@ -57,7 +69,7 @@ while True:
             print(f"Player {players[turn]} stepped on a snake and is now in position {altered_position}")
         else:
             print(f"Player {players[turn]} climbed a ladder and is now in position {altered_position}")
-        positions[turn] = altered_position
+        positions[turn] = post_alter[pre_alter.index(positions[turn])]
 
     turn += 1
 # Announce the winner -> In the loop
