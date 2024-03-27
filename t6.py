@@ -27,7 +27,7 @@ def get_num_players() -> int:
 
 # final num of player positions
 def play_game(players, positions, snake_heads, snake_tails, ladder_bases, ladder_tops) -> list:
-    
+
     p_rolls = [0]
     check_positions = positions
     while p_rolls[len(p_rolls)-1] < 100:   
@@ -57,11 +57,11 @@ def pck_winner(list) -> int:
 '''
 TESTING GROUND
 '''
-def add_number():
-    return 5
-x = get_num_players()
-y = add_number()
-print(x+y)
+#def add_number():
+#    return 5
+#x = get_num_players()
+#y = add_number()
+#print(x+y)
 
 '''
 def main():
