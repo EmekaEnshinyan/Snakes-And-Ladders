@@ -1,7 +1,7 @@
 import numpy as np
 
 players = ["Red", "Blue", "Green", "White"]
-positions = [0]
+positions = [0, 0, 0, 0]
 snake_heads = [25, 44, 65, 76, 99]
 snake_tails = [6, 23, 34, 28, 56]
 ladder_bases = [8, 26, 38, 47, 66]
@@ -14,18 +14,18 @@ def roll_the_dice():
 def initialize_game() -> list:
     return players, positions, snake_heads, snake_tails, ladder_bases, ladder_tops
     
-num = 0
+
 def get_num_players() -> int:
+   n = 0 
    while True:
-    num = int(input("enter number of players."))
-    if num > 4:
+    n = int(input("enter number of players."))
+    if n > 4:
         print("must be 1-4")
-    else:
-        return 0
-    return num
+    else: 
+        return n
+    
+
 # final num of player positions
-positions *= num
- 
 def play_game(players, positions, snake_heads, snake_tails, ladder_bases, ladder_tops) -> list:
     
     p_rolls = [0]
@@ -53,6 +53,17 @@ def pck_winner(list) -> int:
     
     return 0
 
+
+'''
+TESTING GROUND
+'''
+def add_number():
+    return 5
+x = get_num_players()
+y = add_number()
+print(x+y)
+
+'''
 def main():
     players, positions, snake_heads, snake_tails, ladder_bases, ladder_tops = initialise_game()
     
@@ -63,3 +74,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+'''

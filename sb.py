@@ -34,15 +34,11 @@ for found in d.values():
 # exploring assertions in while loops
     #syntax  assert <e>[, asertion message] where e is any object being test
 
-s = "2658 8503 2582 3035 9951".split(" ") #return a list
-d = {'a':1, 'b':2658}
+def get_value():
+    x = 3
+    return x + 5
 
-x = 5
-y = 7
-z = 0
-while z < 3:
-    z += 1
-    print(z)
-    assert x == y, f"{x} is not equivalent to {y}"
-    print(z)
+y = get_value() 
+y += 1
+print(y)
     
