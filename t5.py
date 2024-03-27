@@ -3,8 +3,8 @@ from diceroll import roll_the_dice
 
 available_names = ["Red", "Blue", "Green", "White"]
 while True:
-    num_players = int(input("How many players are playing (2, 3 or 4)?: "))
-    if not (num_players < 2 or num_players > 4):
+    num_players = int(input("How many players are playing (1, 2, 3 or 4)?: "))
+    if not (num_players < 1 or num_players > 4):
         break
 
 # Initialise the players
