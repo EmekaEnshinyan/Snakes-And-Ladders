@@ -21,12 +21,12 @@ def get_num_players() -> int:
         num_players = input("How many players are playing (1, 2, 3 or 4)?: ")
         # Checking the input is a digit, not letters:
         if not num_players.isdigit():
-            print("please type the number of players from 1 to 4")
+            print("Please type the number of players from 1 to 4")
         else:
             num_players = int(num_players)
             # Verifiying valid number of players:
             if (num_players < min_players or num_players > max_players):
-                print("please type the number of players from 1 to 4")
+                print("Please type the number of players from 1 to 4")
             else:
                 break
 
