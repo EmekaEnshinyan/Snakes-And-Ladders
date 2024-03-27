@@ -20,15 +20,15 @@ def get_num_players() -> int:
     min_players = 1
     max_players = 4
     while True:
-        num_players = input("How many players are playing (1, 2, 3 or 4)?: ")
+        num_players = input(f"How many players are playing ({min_players}-{max_players})?: ")
         # Checking the input is a digit, not letters:
         if not num_players.isdigit():
-            print("Please type the number of players from 1 to 4")
+            print(f"Please type the number of players from {min_players} to {max_players}")
         else:
             num_players = int(num_players)
             # Verifiying valid number of players:
             if (num_players < min_players or num_players > max_players):
-                print("Please type the number of players from 1 to 4")
+                print(f"Please type the number of players from {min_players} to {max_players}")
             else:
                 break
 
